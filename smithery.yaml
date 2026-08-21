@@ -1,0 +1,33 @@
+# Smithery configuration for Copa do Mundo 2026
+# Schema: https://smithery.ai/docs/build/project-config
+# Remote HTTP MCP — server hosted at https://api.mcp.ai/p_worldcup
+
+name: worldcup-mcp
+displayName: "Copa do Mundo 2026"
+description: >
+  Horários e resultados da Copa do Mundo 2026 (FIFA World Cup) por linguagem natural: jogos de hoje, que horas joga a sua seleção, placares, grupos, tabela de classificação, chaveamento do mata-mata, seleções e estádios. Dados atualizados automaticamente durante o torneio. Grátis.
+
+version: 0.1.0
+license: MIT
+homepage: https://github.com/mcp-dir/worldcup-mcp
+repository: https://github.com/mcp-dir/worldcup-mcp
+
+tags:
+  - worldcup
+  - brazil
+  - horizontal
+  - read-only
+
+# Remote HTTP MCP — sem startCommand local (servidor já hospedado)
+startCommand:
+  type: http
+  url: https://api.mcp.ai/p_worldcup
+
+auth:
+  type: oauth2
+  resourceMetadataUrl: https://api.mcp.ai/p_worldcup/.well-known/oauth-protected-resource
+  fallback:
+    type: agent-auth
+    description: >
+      Para clientes sem OAuth 2.1. O agente expõe uma tool authenticate(token).
+      Usuário gera o JWT em https://app.mcp.ai/agent-auth e cola no chat.

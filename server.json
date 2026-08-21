@@ -1,0 +1,17 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.mcp-dir/worldcup-mcp",
+  "title": "Copa do Mundo 2026",
+  "description": "Schedules and results for the 2026 FIFA World Cup in natural language: today's matches, kickoff time",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/mcp-dir/worldcup-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.mcp.ai/p_worldcup"
+    }
+  ]
+}
